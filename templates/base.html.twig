@@ -7,6 +7,24 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <nav class="navbar navbar-dark bg-primary">
+    <div>
+    <a class="navbar-brand" href="{{ path('accueil')}}">Accueil</a>
+    {% if is_granted('ROLE_ADMIN') %}
+    <a class="navbar-brand" href="{{ path('admin')}}">Admin</a>
+    {% endif %}
+    <a class="navbar-brand" href="">Mon compte</a>
+    <a class="navbar-brand" href="{{ path('app_logout')}}">Deconnexion</a>
+    </div>
+    {% else %}
+    <nav class="navbar navbar-dark bg-primary">
+    <div>
+    <a class="navbar-brand" href="{{ path('app_login')}}">Connexion</a>
+    <a class="navbar-brand" href="{{ path('app_register')}}">Inscription</a>
+    </div>
+    {% endif %}
+    </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
