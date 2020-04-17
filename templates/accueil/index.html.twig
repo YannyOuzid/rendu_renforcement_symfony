@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+
+
+
+
+
+   <table class="table">
+    <thread>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Stock</th>
+            <th>Photo</th>
+        </tr>
+    </thread>
+
+      {% for produit in produits %}
+    <thread>
+        <tr>
+            <th>{{produit.nom}}</th>
+            <th>{{produit.description}}</th>
+            <th>{{produit.prix}}</th>
+            <th>{{produit.stock}}</th>
+            <td>{% if produit.photo is not null  %}
+            <img src="{{asset('uploads/'~produit.photo)}}">
+            {% endif %}</td>
+        </tr>
+    </thread>
+    {% endfor %}
+
+{{form (form_ajout)}}
+
+
+
+
+
+{% endblock %}

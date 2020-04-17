@@ -19,7 +19,7 @@ class Panier
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\utilisateur", inversedBy="paniers")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur", inversedBy="paniers")
      */
     private $utilisateur;
 

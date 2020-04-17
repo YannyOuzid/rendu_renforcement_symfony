@@ -19,12 +19,12 @@ class Contenu
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\produit", inversedBy="contenus")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Produit", inversedBy="contenus")
      */
     private $produit;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\panier", mappedBy="contenu")
+     * @ORM\OneToMany(targetEntity="App\Entity\Panier", mappedBy="contenu")
      */
     private $panier;
 
