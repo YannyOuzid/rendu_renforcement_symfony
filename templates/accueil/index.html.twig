@@ -34,13 +34,13 @@
         </tr>
     </thread>
     {% endfor %}
-
+{% if is_granted('ROLE_ADMIN') %}
 <h1>Ajouter un produit </h1>
 
 {{form (form_ajout)}}
 
 
-
+{% endif %}
 
 
 {% endblock %}

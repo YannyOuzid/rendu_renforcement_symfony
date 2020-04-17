@@ -148,4 +148,14 @@ class Produit
 
         return $this;
     }
+
+    /**
+     * @ORM\PostRemove
+     */
+    public function supprphoto(){
+        if(file_exists(__DIR__ . '/../../public/uploads/'. $this->photo)){
+            unlink(__DIR__ . '/../../public/uploads/'. $this->photo);
+        }
+        return true;
+    }
 }

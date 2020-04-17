@@ -30,4 +30,21 @@ class ProduitController extends AbstractController
             'form_edit' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route ("produit/delete/{id}", name="delete_produit")
+     */
+
+    public function delete(Produit $produit=null){
+
+        if($produit !=null){
+
+            $pdo = $this->getDoctrine()->getManager();
+            $pdo->remove($produit);
+            $produit->supprphoto();
+            $pdo->flush();
+        }
+        return $this->redirectToRoute('accueil');
+    }
+    
 }

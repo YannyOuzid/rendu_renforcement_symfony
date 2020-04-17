@@ -12,7 +12,11 @@
             <img src="{{asset('uploads/'~produit.photo)}}">
             {% endif %}</p>
 
-
+{% if is_granted('ROLE_ADMIN') %}
 <h1> Modifier le produit </h1>
+<div>
 {{form (form_edit)}}
+<a href="{{ path('delete_produit',{'id':produit.id}) }}">Supprimer</a>
+</div>
+{% endif %}
 {% endblock %}
