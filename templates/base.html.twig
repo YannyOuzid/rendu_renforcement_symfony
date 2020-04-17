@@ -17,6 +17,7 @@
     <a class="navbar-brand" href="">Mon compte</a>
     <a class="navbar-brand" href="{{ path('app_logout')}}">Deconnexion</a>
     </div>
+    <a class="navbar-brand">{{ app.user.nom}} {{ app.user.prenom }}</a>
     {% else %}
     <nav class="navbar navbar-dark bg-primary">
     <div>
@@ -24,6 +25,7 @@
     <a class="navbar-brand" href="{{ path('app_register')}}">Inscription</a>
     </div>
     {% endif %}
+    
     </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
