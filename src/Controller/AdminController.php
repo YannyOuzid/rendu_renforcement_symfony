@@ -44,6 +44,7 @@ class AdminController extends AbstractController
         else{
             $user->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
         }
+        
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);

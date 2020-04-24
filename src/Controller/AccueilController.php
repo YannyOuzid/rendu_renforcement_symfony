@@ -40,7 +40,7 @@ class AccueilController extends AbstractController
                 }
                 catch(FileException $e){
                     $this->addFlash('danger', "Impossible d'uploder le fichier");
-                    return $this->redirecttoRoute('home');
+                    return $this->redirecttoRoute('error');
 
                 }
 

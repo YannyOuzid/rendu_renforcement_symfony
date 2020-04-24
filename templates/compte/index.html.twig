@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block body %}
+<h1>Nom : {{ user.nom}} </h1> 
+<h1>Prenom : {{ user.prenom }}</h1>
+<h1>Mail : {{ user.email }}</h1>
+
+{{form (form_edit)}}
+
+            <p>Historique des commandes</p>
+
+                    {% for panier in paniers %}
+                    <div class="card">
+                    <div class="card-body">
+                    <p>Id du panier : {{ panier.id }}</p>
+
+                    <p>Date d'achat du panier : {{ panier.date|date('Y-m-d H:i:s')}}</p>
+
+                      <a type="button" class="btn btn-primary btn-lg btn-block"  href="{{ path('contenu',{'id': panier.id}) }}">Details de la commande</a>
+
+                    </div>
+                    </div>
+                    
+                    {% endfor %}
+
+{% endblock %}

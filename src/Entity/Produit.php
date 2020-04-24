@@ -158,4 +158,8 @@ class Produit
         }
         return true;
     }
+
+    public function __toString(){
+        return $this->getNom();
+    }
 }

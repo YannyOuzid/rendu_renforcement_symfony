@@ -31,12 +31,12 @@ class Panier
     /**
      * @ORM\Column(type="boolean", nullable=true)
      */
-    private $etat;
+    private $etat = false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Contenu", inversedBy="panier")
+     * @ORM\OneToMany(targetEntity="App\Entity\Contenu", mappedBy="panier")
      */
-    private $contenu;
+    private $contenus;
 
     public function __construct()
     {
@@ -92,14 +92,25 @@ class Panier
         return $this->contenus;
     }
 
-    public function getContenu(): ?Contenu
+    public function addContenus(Contenu $contenus): self
     {
-        return $this->contenu;
+        if (!$this->contenus->contains($contenus)) {
+            $this->contenus[] = $contenus;
+            $contenus->setPanier($this);
+        }
+
+        return $this;
     }
 
-    public function setContenu(?Contenu $contenu): self
+    public function removeContenus(Contenu $contenus): self
     {
-        $this->contenu = $contenu;
+        if ($this->contenus->contains($contenus)) {
+            $this->contenus->removeElement($contenus);
+            // set the owning side to null (unless already changed)
+            if ($contenus->getPanier() === $this) {
+                $contenus->setPanier(null);
+            }
+        }
 
         return $this;
     }

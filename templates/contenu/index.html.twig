@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contenu{% endblock %}
+
+{% block body %}
+
+                        {% set Prix_total = 0 %}
+                        {% set Montant_total = 0 %}
+
+                        <li class="list-group-item list-group-item-primary">Id du panier : {{ panier.id }}</li>
+
+                        {% for contenu in contenus %}
+
+                        {% set Prix_total = contenu.produit.prix * contenu.quantite %}
+                        {% set Montant_total = Prix_total + Montant_total %}
+
+                    <ul class="list-group">
+                    <li class="list-group-item">Nom du produit : {{contenu.produit.nom}}
+                                                <br>
+                                                Date d'ajout au panier : {{contenu.date|date('Y-m-d H:i:s')}}
+                                                <br>
+                                                Quantite commander : {{contenu.quantite}}
+                                                <br>
+                                                Prix à l'unité : {{contenu.produit.prix}}
+                                                <br>
+                                                Prix total : {{Prix_total}} €
+                                                </li>
+                    </ul>
+
+                    {% endfor %}
+                    <li class="list-group-item">Montant total : {{Montant_total}} €</li>
+
+{% endblock %}

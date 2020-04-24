@@ -43,8 +43,7 @@ class ProduitType extends AbstractType
                     ])
                 ],
             ])
-            ->add('sauvegarder', SubmitType::class )
-        ;
+            ->add('sauvegarder', SubmitType::class );
     }
 
     public function configureOptions(OptionsResolver $resolver)

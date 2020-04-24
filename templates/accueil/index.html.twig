@@ -1,39 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
 
 
+    <div class="container">
+        <div class="row-ext">
+            {% for produit in produits %}
+            <div class="col-4">
+                <div class="card" style="width: 100%;">
+                    {% if produit.photo is not null  %}
+                    <img class="card-img-top" src="{{asset('uploads/'~produit.photo)}}" alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{produit.nom}}</h5>
+                        <p class="card-text">{{produit.description}}</p>
+                        <p class="card-text">Prix : {{produit.prix}} €</p>
+                        <p class="card-text">Stock : {{produit.stock}}</p>
+                        <a href="{{ path('produit',{'id':produit.id}) }}" class="btn btn-primary">Vers le produit</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
 
 
-   <table class="table">
-    <thread>
-        <tr>
-            <th>Nom</th>
-            <th>Description</th>
-            <th>Prix</th>
-            <th>Stock</th>
-            <th>Photo</th>
-        </tr>
-    </thread>
-
-      {% for produit in produits %}
-    <thread>
-        <tr>
-            <td>
-            <a href="{{ path('produit',{'id':produit.id}) }}">{{produit.nom}}</a>
-            </td>
-            <th>{{produit.description}}</th>
-            <th>{{produit.prix}} €</th>
-            <th>{{produit.stock}}</th>
-            <td>{% if produit.photo is not null  %}
-            <img src="{{asset('uploads/'~produit.photo)}}">
-            {% endif %}</td>
-        </tr>
-    </thread>
-    {% endfor %}
 {% if is_granted('ROLE_ADMIN') %}
 <h1>Ajouter un produit </h1>
 

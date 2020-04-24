@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,7 +22,7 @@ class Contenu
     private $produit;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Panier", mappedBy="contenu")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Panier", inversedBy="contenus")
      */
     private $panier;
 
@@ -37,11 +35,6 @@ class Contenu
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $date;
-
-    public function __construct()
-    {
-        $this->panier = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -60,33 +53,14 @@ class Contenu
         return $this;
     }
 
-    /**
-     * @return Collection|panier[]
-     */
-    public function getPanier(): Collection
+    public function getPanier(): ?panier
     {
         return $this->panier;
     }
 
-    public function addPanier(panier $panier): self
+    public function setPanier(?panier $panier): self
     {
-        if (!$this->panier->contains($panier)) {
-            $this->panier[] = $panier;
-            $panier->setContenu($this);
-        }
-
-        return $this;
-    }
-
-    public function removePanier(panier $panier): self
-    {
-        if ($this->panier->contains($panier)) {
-            $this->panier->removeElement($panier);
-            // set the owning side to null (unless already changed)
-            if ($panier->getContenu() === $this) {
-                $panier->setContenu(null);
-            }
-        }
+        $this->panier = $panier;
 
         return $this;
     }

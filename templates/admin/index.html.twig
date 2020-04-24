@@ -1,34 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Admin{% endblock %}
 
 {% block body %}
 
     {% if users is not empty %}
-        <table>
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Email</th>
-                    <th>Roles</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="container">
+            <div class="row">
                 {% for user in users %}
-                    <tr>
-                        <td>{{ user.nom }}</td>
-                        <td>{{ user.prenom }}</td>
-                        <td>{{ user.email }}</td>
-                        <td>{{ user.roles|join(', ') }}</td>
-                        <td>
-                        <a href="{{ path('editRole', {'id': user.id}) }}">
-                            Changer de rôle
-                        </a>
-                        </td>
-                    </tr>
+                <div class="card bg-light mb-3"  style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.nom }} {{ user.prenom }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ user.email }}</h6>
+                    <p class="card-text">{{ user.roles|join(', ') }}</p>
+                    <a href="{{ path('editRole', {'id': user.id}) }}" class="card-link">Changer le Role</a>
+                </div>
+                </div>
                 {% endfor %}
-
+            </div>
+        </div>
     {% endif %}
 {% endblock %}

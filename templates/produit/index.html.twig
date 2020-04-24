@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProduitController!{% endblock %}
+{% block title %}Produit{% endblock %}
 
 {% block body %}
 
@@ -12,11 +12,16 @@
             <img src="{{asset('uploads/'~produit.photo)}}">
             {% endif %}</p>
 
+<h1> Ajouter le produit </h1>
+<div>
+{{form (form_add)}}
+</div>
+
 {% if is_granted('ROLE_ADMIN') %}
 <h1> Modifier le produit </h1>
 <div>
 {{form (form_edit)}}
-<a href="{{ path('delete_produit',{'id':produit.id}) }}">Supprimer</a>
+<li href="{{ path('delete_produit',{'id':produit.id}) }}" class="list-group-item list-group-item-action list-group-item-danger">Supprimer le produit</li>
 </div>
 {% endif %}
 {% endblock %}

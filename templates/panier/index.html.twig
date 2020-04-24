@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+
+                {% if paniers is not empty %}
+                    {% if contenus is not empty %}
+
+                        {% set Prix_total = 0 %}
+                        {% set Montant_total = 0 %}
+
+                        <li class="list-group-item list-group-item-primary">Id du panier : {{ paniers[0].id }}</li>
+
+                        {% for contenu in contenus %}
+
+                        {% set Prix_total = contenu.produit.prix * contenu.quantite %}
+                        {% set Montant_total = Prix_total + Montant_total %}
+
+                    <ul class="list-group">
+                    <li class="list-group-item">Nom du produit : {{contenu.produit.nom}}
+                                                <br>
+                                                Quantite commander : {{contenu.quantite}}
+                                                <br>
+                                                Prix à l'unité : {{contenu.produit.prix}}
+                                                <br>
+                                                Prix total : {{Prix_total}} €
+                                                </li>
+                    </ul>
+
+                    {% endfor %}
+                    <li class="list-group-item">Montant total : {{Montant_total}} €</li>
+
+                    <a type="button" class="btn btn-primary btn-lg btn-block"   href="/panier/{{ paniers[0].id }}">Valider le panier</a>
+                    {% endif %}
+
+                {% else %}
+                <li class="list-group-item list-group-item-danger">Veuillez ajouter un panier </li>
+                {{form (form_ajout)}}
+
+                {% endif %}
+
+{% endblock %}
