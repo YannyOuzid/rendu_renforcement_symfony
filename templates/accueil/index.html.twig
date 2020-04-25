@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}{{'accueil.titre'|trans}}{% endblock %}
 
 {% block body %}
 
@@ -16,9 +16,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{produit.nom}}</h5>
                         <p class="card-text">{{produit.description}}</p>
-                        <p class="card-text">Prix : {{produit.prix}} €</p>
-                        <p class="card-text">Stock : {{produit.stock}}</p>
-                        <a href="{{ path('produit',{'id':produit.id}) }}" class="btn btn-primary">Vers le produit</a>
+                        <p class="card-text">{{'accueil.prix'|trans}} : {{produit.prix}} €</p>
+                        <p class="card-text">{{'accueil.stock'|trans}} : {{produit.stock}}</p>
+                        <a href="{{ path('produit',{'id':produit.id}) }}" class="btn btn-primary">{{'accueil.produit'|trans}}</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
 
 
 {% if is_granted('ROLE_ADMIN') %}
-<h1>Ajouter un produit </h1>
+<h1>{{'accueil.add'|trans}} </h1>
 
 {{form (form_ajout)}}
 

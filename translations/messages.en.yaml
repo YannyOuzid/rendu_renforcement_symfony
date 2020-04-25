@@ -1,0 +1,86 @@
+nav:
+  connexion: 'Connection'
+  inscription : 'Register'
+  accueil : 'Home'
+  admin : 'Admin'
+  compte : 'My Account'
+  panier : 'My Cart'
+  deconnexion : 'Logout'
+  titre : 'Welcome'
+
+accueil:
+  add : 'Add a product'
+  prix : 'Price'
+  stock : 'Stock'
+  produit : 'To the product'
+  titre : 'Home'
+
+produit:
+  nom : 'Name'
+  description : 'Description'
+  prix : 'Price'
+  stock : 'Stock'
+  add : 'Add to cart'
+  edit : 'Modify product'
+  delete : 'Delete product'
+  titre : 'Product'
+
+admin:
+  role : 'Change the role'
+  titre : 'Admin'
+
+compte :
+  nom : 'Name'
+  prenom : 'First Name'
+  mail : 'E-mail'
+  edit : 'Edit account information'
+  historique : 'Order history'
+  panier : 'Cart ID'
+  achat : 'Cart purchase date'
+  detail : 'Cart Details'
+  titre : 'My Account'
+
+contenu : 
+  panier : 'Cart ID'
+  nom : 'Product name'
+  date : 'Product purchase date'
+  quantite : 'Quantity'
+  prix : 'Product price per unit'
+  total : 'Total price'
+  montant : 'Total cart amount'
+  titre : 'Content'
+
+panier : 
+  panier : 'Cart ID'
+  nom : 'Product name'
+  quantite : 'Quantity'
+  prix : 'Product price per unit'
+  total : 'Total price'
+  montant : 'Total cart amount'
+  add : 'Create a new cart'
+  valid : 'Validate my cart'
+  titre : 'My cart'
+
+register : 
+  button : 'Register'
+  titre : 'Registration'
+
+connexion :
+  etat : 'You are logged in as'
+  mail : 'E-mail'
+  password : 'Password'
+  titre : 'Connection'
+
+
+Nom : 'Name'
+Description : 'Description'
+Prix : 'Price'
+Stock : 'Stock'
+Photo : 'Picture'
+Sauvegarder : 'Save'
+Quantite : 'Quantity'
+Ajouter : 'Add'
+Email : 'E-mail'
+Prenom : 'First Name'
+Plain password : 'Plain password'
+Agree terms : 'Agree terms'

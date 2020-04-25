@@ -1,0 +1,87 @@
+nav:
+  connexion: 'Connexion'
+  inscription : 'Inscription'
+  accueil : 'Accueil'
+  admin : 'Admin'
+  compte : 'Mon Compte'
+  panier : 'Mon Panier'
+  deconnexion : 'Deconnexion'
+  titre : 'Bienvenue'
+
+accueil:
+  add : 'Ajouter un produit'
+  prix : 'Prix'
+  stock : 'Stock'
+  produit : 'Vers le produit'
+  titre : 'Accueil'
+
+produit:
+  nom : 'Nom'
+  description : 'Description'
+  prix : 'Prix'
+  stock : 'Stock'
+  add : 'Ajouter au panier'
+  edit : 'Modifier le produit'
+  delete : 'Supprimer le panier'
+  titre : 'Produit'
+
+admin:
+  role : 'Changer le role'
+  titre : 'Admin'
+
+compte :
+  nom : 'Nom'
+  prenom : 'Prenom'
+  mail : 'E-mail'
+  edit : 'Modifier les informations de son compte'
+  historique : 'Historique des commandes'
+  panier : 'Id du panier'
+  achat : 'Date achat du panier'
+  detail : 'Details du panier'
+  titre : 'Mon Compte'
+  
+contenu : 
+  panier : 'Id du panier'
+  nom : 'Nom du produit'
+  date : 'Date achat du produit'
+  quantite : 'Quantité commander'
+  prix : 'Prix du produit à l unité'
+  total : 'Prix total'
+  montant : 'Montant total du panier'
+  titre : 'Contenu'
+
+panier :
+  panier : 'Id du panier'
+  nom : 'Nom du produit'
+  quantite : 'Quantité commander'
+  prix : 'Prix du produit à l unité'
+  total : 'Prix total'
+  montant : 'Montant total du panier'
+  add : 'Creer un panier'
+  valid : 'Valider mon panier'
+  titre : 'Mon Panier'
+
+register :
+  button : 'Enregistrer'
+  titre : 'Enregistrement'
+
+connexion :
+  etat : 'Vous etes connecté en tant que '
+  mail : 'E-mail'
+  password : 'Mot de passe'
+  titre : 'Connexion'
+
+  
+
+Nom : 'Nom'
+Description : 'Description'
+Prix : 'Prix'
+Stock : 'Stock'
+Photo : 'Photo'
+Sauvegarder : 'Sauvegarder'
+Quantite : 'Quantité'
+Ajouter : 'Ajouter'
+Email : 'E-mail'
+Prenom : 'Prenom'
+Plain password : 'Mot de passe'
+Agree terms : 'Valider les conditions'

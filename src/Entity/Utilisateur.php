@@ -199,6 +199,7 @@ class Utilisateur implements UserInterface
             return false;
         }
     }
+
     
     public function __toString(){
         return $this->getEmail();

@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Contenu;
+use App\Entity\Panier;
 use App\Entity\Utilisateur;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,10 +24,19 @@ class AdminController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository(Utilisateur::class)->findAll();
 
+        $paniers = $em->getRepository(Panier::class)->findBy(
+            array('etat' => false));
+
+        $contenus = $em->getRepository(Contenu::class)->findBy(
+            array('panier' => $paniers));
+
         return $this->render('admin/index.html.twig', [
             'users' => $users,
+            'paniers' => $paniers,
+            'contenus' => $contenus,
         ]);
     }
+    
 
     /**
      * @Route("/editRole/{id}", name="editRole")
@@ -34,16 +45,20 @@ class AdminController extends AbstractController
     {
         if($user == null){
             $this->addFlash('error', 'Utilisateur introuvable');
-            return $this->redirectToRoute('athlete');
+            return $this->redirectToRoute('accueil');
 
         }
 
         if($user->hasRole('ROLE_ADMIN') ){
-            $user->setRoles(['Role_USER']);
+            $user->setRoles(['ROLE_USER', 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN']);
         }
-        else{
+        elseif($user->hasRole('ROLE_USER') ){
             $user->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
         }
+        elseif($user->hasRole('ROLE_SUPER_ADMIN') ){
+            $user->setRoles(['ROLE_USER']);
+        }
+       
         
 
         $em = $this->getDoctrine()->getManager();

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{'nav.titre'|trans}}{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <style>
         .row-ext{display: flex; flex-direction: row; flex-wrap: wrap;}
@@ -13,21 +13,21 @@
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <nav class="navbar navbar-dark bg-primary">
     <div>
-    <a class="navbar-brand" href="{{ path('accueil')}}">Accueil</a>
+    <a class="navbar-brand" href="{{ path('accueil')}}">{{'nav.accueil'|trans}}</a>
     {% if is_granted('ROLE_ADMIN') %}
-    <a class="navbar-brand" href="{{ path('admin')}}">Admin</a>
+    <a class="navbar-brand" href="{{ path('admin')}}">{{'nav.admin'|trans}}</a>
     {% endif %}
-    <a class="navbar-brand" href="{{ path('compte')}}">Mon compte</a>
-    <a class="navbar-brand" href="{{ path('panier')}}">Mon Panier</a>
-    <a class="navbar-brand" href="{{ path('app_logout')}}">Deconnexion</a>
+    <a class="navbar-brand" href="{{ path('compte')}}">{{'nav.compte'|trans}}</a>
+    <a class="navbar-brand" href="{{ path('panier')}}">{{'nav.panier'|trans}}</a>
+    <a class="navbar-brand" href="{{ path('app_logout')}}">{{'nav.deconnexion'|trans}}</a>
     </div>
     
     <a class="navbar-brand">{{ app.user.nom}} {{ app.user.prenom }}</a>
     {% else %}
     <nav class="navbar navbar-dark bg-primary">
     <div>
-    <a class="navbar-brand" href="{{ path('app_login')}}">Connexion</a>
-    <a class="navbar-brand" href="{{ path('app_register')}}">Inscription</a>
+    <a class="navbar-brand" href="{{ path('app_login')}}">{{'nav.connexion'|trans}}</a>
+    <a class="navbar-brand" href="{{ path('app_register')}}">{{'nav.inscription'|trans}}</a>
     </div>
     {% endif %}
     

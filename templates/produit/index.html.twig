@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Produit{% endblock %}
+{% block title %}{{'produit.titre'|trans}}{% endblock %}
 
 {% block body %}
 
-            <h1>Nom : {{produit.nom}}</h1>
-            <p>Description : {{produit.description}}</p>
-            <p>Prix : {{produit.prix}} €</p>
-            <p>Stock : {{produit.stock}}</p>
+            <h1>{{'produit.nom'|trans}} : {{produit.nom}}</h1>
+            <p>{{'produit.description'|trans}} : {{produit.description}}</p>
+            <p>{{'produit.prix'|trans}} : {{produit.prix}} €</p>
+            <p>{{'produit.stock'|trans}} : {{produit.stock}}</p>
             <p>{% if produit.photo is not null  %}
             <img src="{{asset('uploads/'~produit.photo)}}">
             {% endif %}</p>
 
-<h1> Ajouter le produit </h1>
+<h1> {{'produit.add'|trans}} </h1>
 <div>
 {{form (form_add)}}
 </div>
 
 {% if is_granted('ROLE_ADMIN') %}
-<h1> Modifier le produit </h1>
+<h1> {{'produit.edit'|trans}} </h1>
 <div>
 {{form (form_edit)}}
-<li href="{{ path('delete_produit',{'id':produit.id}) }}" class="list-group-item list-group-item-action list-group-item-danger">Supprimer le produit</li>
+<li href="{{ path('delete_produit',{'id':produit.id}) }}" class="list-group-item list-group-item-action list-group-item-danger">{{'produit.delete'|trans}}</li>
 </div>
 {% endif %}
 {% endblock %}

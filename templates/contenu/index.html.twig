@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contenu{% endblock %}
+{% block title %}{{'contenu.titre'|trans}}{% endblock %}
 
 {% block body %}
 
                         {% set Prix_total = 0 %}
                         {% set Montant_total = 0 %}
 
-                        <li class="list-group-item list-group-item-primary">Id du panier : {{ panier.id }}</li>
+                        <li class="list-group-item list-group-item-primary">{{'contenu.panier'|trans}} : {{ panier.id }}</li>
 
                         {% for contenu in contenus %}
 
@@ -15,19 +15,19 @@
                         {% set Montant_total = Prix_total + Montant_total %}
 
                     <ul class="list-group">
-                    <li class="list-group-item">Nom du produit : {{contenu.produit.nom}}
+                    <li class="list-group-item">{{'contenu.nom'|trans}} : {{contenu.produit.nom}}
                                                 <br>
-                                                Date d'ajout au panier : {{contenu.date|date('Y-m-d H:i:s')}}
+                                                {{'contenu.date'|trans}} : {{contenu.date|date('Y-m-d H:i:s')}}
                                                 <br>
-                                                Quantite commander : {{contenu.quantite}}
+                                                {{'contenu.quantite'|trans}} : {{contenu.quantite}}
                                                 <br>
-                                                Prix à l'unité : {{contenu.produit.prix}}
+                                                {{'contenu.prix'|trans}} : {{contenu.produit.prix}}
                                                 <br>
-                                                Prix total : {{Prix_total}} €
+                                                {{'contenu.total'|trans}} : {{Prix_total}} €
                                                 </li>
                     </ul>
 
                     {% endfor %}
-                    <li class="list-group-item">Montant total : {{Montant_total}} €</li>
+                    <li class="list-group-item">{{'contenu.montant'|trans}} : {{Montant_total}} €</li>
 
 {% endblock %}

@@ -1,24 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon compte{% endblock %}
+{% block title %}{{'compte.titre'|trans}}{% endblock %}
 
 {% block body %}
-<h1>Nom : {{ user.nom}} </h1> 
-<h1>Prenom : {{ user.prenom }}</h1>
-<h1>Mail : {{ user.email }}</h1>
+
+
+<p>{{'compte.nom'|trans}} : {{ user.nom}} </p> 
+<p>{{'compte.prenom'|trans}} : {{ user.prenom }}</p>
+<p>{{'compte.mail'|trans}} : {{ user.email }}</p>
+
+<p>{{'compte.edit'|trans}}</p>
 
 {{form (form_edit)}}
 
-            <p>Historique des commandes</p>
+            <p>{{'compte.historique'|trans}}</p>
 
                     {% for panier in paniers %}
                     <div class="card">
                     <div class="card-body">
-                    <p>Id du panier : {{ panier.id }}</p>
+                    <p>{{'compte.panier'|trans}} : {{ panier.id }}</p>
 
-                    <p>Date d'achat du panier : {{ panier.date|date('Y-m-d H:i:s')}}</p>
+                    <p>{{'compte.achat'|trans}} : {{ panier.date|date('Y-m-d H:i:s')}}</p>
 
-                      <a type="button" class="btn btn-primary btn-lg btn-block"  href="{{ path('contenu',{'id': panier.id}) }}">Details de la commande</a>
+                      <a type="button" class="btn btn-primary btn-lg btn-block"  href="{{ path('contenu',{'id': panier.id}) }}">{{'compte.detail'|trans}}</a>
 
                     </div>
                     </div>

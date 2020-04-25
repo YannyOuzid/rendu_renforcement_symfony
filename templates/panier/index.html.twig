@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Panier{% endblock %}
+{% block title %}{{'panier.titre'|trans}}{% endblock %}
 
 {% block body %}
 
@@ -10,7 +10,7 @@
                         {% set Prix_total = 0 %}
                         {% set Montant_total = 0 %}
 
-                        <li class="list-group-item list-group-item-primary">Id du panier : {{ paniers[0].id }}</li>
+                        <li class="list-group-item list-group-item-primary">{{'panier.panier'|trans}} : {{ paniers[0].id }}</li>
 
                         {% for contenu in contenus %}
 
@@ -18,24 +18,24 @@
                         {% set Montant_total = Prix_total + Montant_total %}
 
                     <ul class="list-group">
-                    <li class="list-group-item">Nom du produit : {{contenu.produit.nom}}
+                    <li class="list-group-item">{{'panier.nom'|trans}} : {{contenu.produit.nom}}
                                                 <br>
-                                                Quantite commander : {{contenu.quantite}}
+                                                {{'panier.quantite'|trans}} : {{contenu.quantite}}
                                                 <br>
-                                                Prix à l'unité : {{contenu.produit.prix}}
+                                                {{'panier.prix'|trans}} : {{contenu.produit.prix}}
                                                 <br>
-                                                Prix total : {{Prix_total}} €
+                                                {{'panier.total'|trans}} : {{Prix_total}} €
                                                 </li>
                     </ul>
 
                     {% endfor %}
-                    <li class="list-group-item">Montant total : {{Montant_total}} €</li>
+                    <li class="list-group-item">{{'panier.montant'|trans}} : {{Montant_total}} €</li>
 
-                    <a type="button" class="btn btn-primary btn-lg btn-block"   href="/panier/{{ paniers[0].id }}">Valider le panier</a>
+                    <a type="button" class="btn btn-primary btn-lg btn-block"   href="/panier/{{ paniers[0].id }}">{{'panier.valid'|trans}}</a>
                     {% endif %}
 
                 {% else %}
-                <li class="list-group-item list-group-item-danger">Veuillez ajouter un panier </li>
+                <li class="list-group-item list-group-item-danger">{{'panier.add'|trans}} </li>
                 {{form (form_ajout)}}
 
                 {% endif %}

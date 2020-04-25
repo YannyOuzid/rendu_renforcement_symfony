@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin{% endblock %}
+{% block title %}{{'admin.titre'|trans}}{% endblock %}
 
 {% block body %}
 
@@ -13,11 +13,32 @@
                     <h5 class="card-title">{{ user.nom }} {{ user.prenom }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{ user.email }}</h6>
                     <p class="card-text">{{ user.roles|join(', ') }}</p>
-                    <a href="{{ path('editRole', {'id': user.id}) }}" class="card-link">Changer le Role</a>
+                    <a href="{{ path('editRole', {'id': user.id}) }}" class="card-link">{{'admin.role'|trans}}</a>
                 </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
+    {% endif %}
+
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+    <p>Les paniers encore en cours</p>
+        {% for panier in paniers %}
+                        <div class="card">
+                        <div class="card-body">
+                        <p>{{'compte.panier'|trans}} : {{ panier.id }}</p>
+
+                        <p>Utilisateur : {{ panier.utilisateur }}</p>
+
+                        <p>Nom : {{ panier.utilisateur.nom }}</p>
+
+                        <p>Prenom : {{ panier.utilisateur.prenom }}</p>
+
+                        <a type="button" class="btn btn-primary btn-lg btn-block"  href="{{ path('contenu',{'id': panier.id}) }}">{{'compte.detail'|trans}}</a>
+
+                        </div>
+                        </div>
+                        
+                        {% endfor %}
     {% endif %}
 {% endblock %}
