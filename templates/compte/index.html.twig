@@ -5,28 +5,27 @@
 {% block body %}
 
 
-<p>{{'compte.nom'|trans}} : {{ user.nom}} </p> 
-<p>{{'compte.prenom'|trans}} : {{ user.prenom }}</p>
-<p>{{'compte.mail'|trans}} : {{ user.email }}</p>
+  <p>{{'compte.nom'|trans}} : {{ user.nom}} </p> 
+  <p>{{'compte.prenom'|trans}} : {{ user.prenom }}</p>
+  <p>{{'compte.mail'|trans}} : {{ user.email }}</p>
+  <li class="list-group-item list-group-item-primary">{{'compte.edit'|trans}}</li>
 
-<li class="list-group-item list-group-item-primary">{{'compte.edit'|trans}}</li>
+  {{form (form_edit)}}
 
-{{form (form_edit)}}
+  <li class="list-group-item list-group-item-primary">{{'compte.historique'|trans}}</li>
 
-<li class="list-group-item list-group-item-primary">{{'compte.historique'|trans}}</li>
+  {% for panier in paniers %}
+    <div class="card">
+      <div class="card-body">
+        <p>{{'compte.panier'|trans}} : {{ panier.id }}</p>
 
-                    {% for panier in paniers %}
-                    <div class="card">
-                    <div class="card-body">
-                    <p>{{'compte.panier'|trans}} : {{ panier.id }}</p>
+        <p>{{'compte.achat'|trans}} : {{ panier.date|date('Y-m-d H:i:s')}}</p>
 
-                    <p>{{'compte.achat'|trans}} : {{ panier.date|date('Y-m-d H:i:s')}}</p>
+        <a type="button" class="btn btn-primary btn-lg btn-block"  href="{{ path('contenu',{'id': panier.id}) }}">{{'compte.detail'|trans}}</a>
 
-                      <a type="button" class="btn btn-primary btn-lg btn-block"  href="{{ path('contenu',{'id': panier.id}) }}">{{'compte.detail'|trans}}</a>
-
-                    </div>
-                    </div>
+      </div>
+    </div>
                     
-                    {% endfor %}
+  {% endfor %}
 
 {% endblock %}

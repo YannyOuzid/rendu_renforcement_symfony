@@ -4,50 +4,54 @@
 
 {% block body %}
 
-                {% if paniers is not empty %}
-                    {% if contenus is not empty %}
+    {% if paniers is not empty %}
+        {% if contenus is not empty %}
 
-                        {% set Prix_total = 0 %}
-                        {% set Montant_total = 0 %}
+            {% set Prix_total = 0 %}
+            {% set Montant_total = 0 %}
 
-                        <li class="list-group-item list-group-item-primary">{{'panier.panier'|trans}} : {{ paniers[0].id }}</li>
+            <li class="list-group-item list-group-item-primary">{{'panier.panier'|trans}} : {{ paniers[0].id }}</li>
 
-                        {% for contenu in contenus %}
+            {% for contenu in contenus %}
 
-                        {% set Prix_total = contenu.produit.prix * contenu.quantite %}
-                        {% set Montant_total = Prix_total + Montant_total %}
+                {% set Prix_total = contenu.produit.prix * contenu.quantite %}
+                {% set Montant_total = Prix_total + Montant_total %}
 
-                    <ul class="list-group">
+                <ul class="list-group">
 
-                    <li class="list-group-item">{{'panier.nom'|trans}} : {{contenu.produit.nom}}
-                                                <br>
-                                                {{'panier.quantite'|trans}} : {{contenu.quantite}}
-                                                <br>
-                                                {{'panier.prix'|trans}} : {{contenu.produit.prix}}
-                                                <br>
-                                                {{'panier.total'|trans}} : {{Prix_total}} €
-                                                <br>
-                                                <a href="{{ path('delete_contenu',{'id':contenu.id}) }}">{{'panier.suppr'|trans}} </a>
-                                                </li>
-                    </ul>
+                    <li class="list-group-item">
+                        {{'panier.nom'|trans}} : {{contenu.produit.nom}}
+                        <br>
+                        {{'panier.quantite'|trans}} : {{contenu.quantite}}
+                        <br>
+                        {{'panier.prix'|trans}} : {{contenu.produit.prix}}
+                        <br>
+                        {{'panier.total'|trans}} : {{Prix_total}} €
+                        <br>
+                        <a href="{{ path('delete_contenu',{'id':contenu.id}) }}">{{'panier.suppr'|trans}} </a>
+                    </li>
+                </ul>
 
-                    {% endfor %}
-                    <li class="list-group-item">{{'panier.montant'|trans}} : {{Montant_total}} €</li>
+            {% endfor %}
 
-                    <a type="button" class="btn btn-primary btn-lg btn-block"   href="/panier/{{ paniers[0].id }}">{{'panier.valid'|trans}}</a>
+            <li class="list-group-item">{{'panier.montant'|trans}} : {{Montant_total}} €</li>
 
-                    {% else %}
+            <a type="button" class="btn btn-primary btn-lg btn-block"   href="/panier/{{ paniers[0].id }}">{{'panier.valid'|trans}}</a>
 
-                     <li class="list-group-item list-group-item-primary">{{'panier.panier'|trans}} : {{ paniers[0].id }}</li>
+        {% else %}
 
-                    <p>{{'panier.vide'|trans}} </p>
+            <li class="list-group-item list-group-item-primary">{{'panier.panier'|trans}} : {{ paniers[0].id }}</li>
 
-                    {% endif %}
+            <p>{{'panier.vide'|trans}} </p>
 
-                {% else %}
-                <li class="list-group-item list-group-item-danger">{{'panier.add'|trans}} </li>
-                {{form (form_ajout)}}
+        {% endif %}
 
-                {% endif %}
+    {% else %}
+
+        <li class="list-group-item list-group-item-danger">{{'panier.add'|trans}} </li>
+                
+        {{form (form_ajout)}}
+
+    {% endif %}
 
 {% endblock %}

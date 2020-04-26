@@ -26,15 +26,10 @@
         </div>
     </div>
 
-
-
-{% if is_granted('ROLE_ADMIN') %}
-<h1>{{'accueil.add'|trans}} </h1>
-
-{{form (form_ajout)}}
-
-
-{% endif %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <h1>{{'accueil.add'|trans}} </h1>
+        {{form (form_ajout)}}
+    {% endif %}
 
 
 {% endblock %}

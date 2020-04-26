@@ -4,30 +4,30 @@
 
 {% block body %}
 
-                        {% set Prix_total = 0 %}
-                        {% set Montant_total = 0 %}
+    {% set Prix_total = 0 %}
+    {% set Montant_total = 0 %}
 
-                        <li class="list-group-item list-group-item-primary">{{'contenu.panier'|trans}} : {{ panier.id }}</li>
+    <li class="list-group-item list-group-item-primary">{{'contenu.panier'|trans}} : {{ panier.id }}</li>
 
-                        {% for contenu in contenus %}
+    {% for contenu in contenus %}
 
-                        {% set Prix_total = contenu.produit.prix * contenu.quantite %}
-                        {% set Montant_total = Prix_total + Montant_total %}
+        {% set Prix_total = contenu.produit.prix * contenu.quantite %}
+        {% set Montant_total = Prix_total + Montant_total %}
 
-                    <ul class="list-group">
-                    <li class="list-group-item">{{'contenu.nom'|trans}} : {{contenu.produit.nom}}
-                                                <br>
-                                                {{'contenu.date'|trans}} : {{contenu.date|date('Y-m-d H:i:s')}}
-                                                <br>
-                                                {{'contenu.quantite'|trans}} : {{contenu.quantite}}
-                                                <br>
-                                                {{'contenu.prix'|trans}} : {{contenu.produit.prix}}
-                                                <br>
-                                                {{'contenu.total'|trans}} : {{Prix_total}} €
-                                                </li>
-                    </ul>
-
-                    {% endfor %}
-                    <li class="list-group-item">{{'contenu.montant'|trans}} : {{Montant_total}} €</li>
+        <ul class="list-group">
+            <li class="list-group-item">
+                {{'contenu.nom'|trans}} : {{contenu.produit.nom}}
+                <br>
+                {{'contenu.date'|trans}} : {{contenu.date|date('Y-m-d H:i:s')}}
+                <br>
+                {{'contenu.quantite'|trans}} : {{contenu.quantite}}
+                <br>
+                {{'contenu.prix'|trans}} : {{contenu.produit.prix}}
+                <br>
+                {{'contenu.total'|trans}} : {{Prix_total}} €
+            </li>
+        </ul>
+    {% endfor %}
+    <li class="list-group-item">{{'contenu.montant'|trans}} : {{Montant_total}} €</li>
 
 {% endblock %}

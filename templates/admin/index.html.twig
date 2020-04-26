@@ -27,19 +27,19 @@
 
     <li class="list-group-item list-group-item-primary">{{'admin.panier'|trans}}</li>
         {% for panier in paniers %}
-                        <div class="card">
-                        <div class="card-body">
-                        <p>{{'admin.id'|trans}} : {{ panier.id }}</p>
+            <div class="card">
+                <div class="card-body">
+                    <p>{{'admin.id'|trans}} : {{ panier.id }}</p>
 
-                        <p>{{'admin.utilisateur'|trans}} : {{ panier.utilisateur.nom }} {{ panier.utilisateur.prenom }}</p>
+                    <p>{{'admin.utilisateur'|trans}} : {{ panier.utilisateur.nom }} {{ panier.utilisateur.prenom }}</p>
 
-                        <p>{{'admin.mail'|trans}} : {{ panier.utilisateur}}</p>
+                    <p>{{'admin.mail'|trans}} : {{ panier.utilisateur}}</p>
 
-                        <a type="button" class="btn btn-primary btn-lg btn-block"  href="{{ path('contenu',{'id': panier.id}) }}">{{'compte.detail'|trans}}</a>
+                    <a type="button" class="btn btn-primary btn-lg btn-block"  href="{{ path('contenu',{'id': panier.id}) }}">{{'compte.detail'|trans}}</a>
 
-                        </div>
-                        </div>
+                </div>
+            </div>
                         
-                        {% endfor %}
+        {% endfor %}
     {% endif %}
 {% endblock %}
