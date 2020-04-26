@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Accés Refusé</h1>
+    <h1>{{'error.titre403'|trans}}</h1>
 
     <p>
-        Vous ne possédez pas les droits pour accéder à cette page
-        <a href="{{ path('accueil') }}">Retourner à l'accueil</a>.
+        {{'error.texte403'|trans}}
+        <a href="{{ path('accueil') }}">{{'error.accueil'|trans}}</a>.
     </p>
 {% endblock %}

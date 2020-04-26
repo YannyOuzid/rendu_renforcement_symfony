@@ -60,6 +60,8 @@ class ProduitController extends AbstractController
 
     public function delete(Produit $produit=null){
 
+        //Suppression des produits
+
         if($produit !=null){
 
             $pdo = $this->getDoctrine()->getManager();

@@ -18,12 +18,12 @@ class Contenu
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Produit", inversedBy="contenus")
+     * @ORM\JoinColumn(name="produit_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     private $produit;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Panier", inversedBy="contenus")
-     * @ORM\JoinColumn(onDelete="SET NULL", nullable=true)
      */
     private $panier;
 

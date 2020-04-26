@@ -16,6 +16,7 @@ class PanierController extends AbstractController
      */
     public function index(Request $request)
     {
+        //Connexion a la base de données puis création du formulaire
 
         $pdo = $this->getDoctrine()->getManager();
 
@@ -54,6 +55,7 @@ class PanierController extends AbstractController
      */
     public function valid(Request $request, Panier $panier)
     {
+        //Création du formulaire pour valider le panier
 
         $form = $this->createForm(PanierType::class, $panier);
         $form->handleRequest($request);

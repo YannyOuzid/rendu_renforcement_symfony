@@ -16,10 +16,13 @@ class AccueilController extends AbstractController
      */
     public function index(Request $request)
     {
+        //Connexion a la base de données
+
         $pdo = $this->getDoctrine()->getManager();
 
-        
         $produit = new Produit();
+
+        //Création du formulaire d'ajout
 
         $form = $this->createForm(ProduitType::class, $produit);
 

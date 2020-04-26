@@ -21,7 +21,11 @@ class AdminController extends AbstractController
      */
     public function index()
     {
+        //Connexion a la base de données
+
         $em = $this->getDoctrine()->getManager();
+
+
         $users = $em->getRepository(Utilisateur::class)->findAll();
 
         $paniers = $em->getRepository(Panier::class)->findBy(
@@ -48,6 +52,8 @@ class AdminController extends AbstractController
             return $this->redirectToRoute('accueil');
 
         }
+
+        //Modification des roles des utilisateurs
 
         if($user->hasRole('ROLE_ADMIN') ){
             $user->setRoles(['ROLE_USER', 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN']);

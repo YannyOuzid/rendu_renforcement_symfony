@@ -64,6 +64,8 @@ panier :
   montant : 'Montant total du panier'
   add : 'Vous n avez toujours pas de panier en cours. Veuillez creer un panier'
   valid : 'Valider mon panier'
+  vide : 'Votre panier est vide. Veuillez ajouter des articles'
+  suppr : 'Delete'
   titre : 'Mon Panier'
 
 register :
@@ -75,6 +77,15 @@ connexion :
   mail : 'E-mail'
   password : 'Mot de passe'
   titre : 'Connexion'
+
+error :
+  titre404 : 'Page introuvable'
+  titre500 : 'Erreur de connexion au serveur'
+  titre403 : 'Accés refusé'
+  texte404 : 'La page que vous recherchez n'existe pas'
+  texte500 : 'Problème de connexion au serveur'
+  texte403 : 'Vous ne possédez pas les droits pour accéder à cette page'
+  accueil : 'Retourner à l'accueil'
 
 Nom : 'Nom'
 Description : 'Description'

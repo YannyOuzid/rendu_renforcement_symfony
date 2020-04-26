@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Problème de connexion au serveur</h1>
+    <h1>{{'error.titre500'|trans}}</h1>
 
     <p>
-        La page que vous recherchez n'existe pas
-        <a href="{{ path('accueil') }}">Retourner à l'accueil</a>.
+        {{'error.texte500'|trans}}
+        <a href="{{ path('accueil') }}">{{'error.accueil'|trans}}</a>.
     </p>
 {% endblock %}

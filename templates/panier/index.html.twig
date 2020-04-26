@@ -27,7 +27,7 @@
                                                 <br>
                                                 {{'panier.total'|trans}} : {{Prix_total}} €
                                                 <br>
-                                                <a href="{{ path('delete_contenu',{'id':contenu.id}) }}">Supprimer</a>
+                                                <a href="{{ path('delete_contenu',{'id':contenu.id}) }}">{{'panier.suppr'|trans}} </a>
                                                 </li>
                     </ul>
 
@@ -40,7 +40,7 @@
 
                      <li class="list-group-item list-group-item-primary">{{'panier.panier'|trans}} : {{ paniers[0].id }}</li>
 
-                    <p>Votre panier est vide. Veuillez ajouter des articles</p>
+                    <p>{{'panier.vide'|trans}} </p>
 
                     {% endif %}
 

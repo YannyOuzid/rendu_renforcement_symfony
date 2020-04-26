@@ -14,6 +14,7 @@ class ContenuController extends AbstractController
      */
     public function index(Panier $panier)
     {
+        ////Connexion a la base de données puis obtention des informations
 
         $pdo = $this->getDoctrine()->getManager();
         $contenus =  $pdo->getRepository(Contenu::class)->findby(array('panier'=> $panier));
@@ -30,6 +31,8 @@ class ContenuController extends AbstractController
      */
 
     public function delete(Contenu $contenu=null){
+
+        //Suppression de la donnée
 
         if($contenu !=null){
 

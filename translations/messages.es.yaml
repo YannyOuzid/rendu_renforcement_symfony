@@ -64,6 +64,8 @@ panier :
   montant : 'Cantidad total de la canasta'
   add : 'Aún no tienes canasta en progreso. Crea una canasta'
   valid : 'Validar mi cesta'
+  vide : 'Tu canasta esta vacía. Por favor agregue artículos'
+  suppr : 'Eliminar'
   titre : 'Mi cesta'
 
 register :
@@ -75,6 +77,16 @@ connexion :
   mail : 'Correo electrónico'
   password : 'Contraseña'
   titre : 'Iniciar sesión'
+
+error :
+  titre404 : 'Vuelve a casa'
+  titre500 : 'Error de conexión del servidor'
+  titre403 : 'Acceso denegado'
+  texte404 : 'La página que estás buscando no existe'
+  texte500 : 'Problema de conexión del servidor'
+  texte403 : 'No tienes los derechos para acceder a esta página'
+  accueil : 'Vuelve a casa'
+
 
 Nom : 'Apellido'
 Description : 'Description'
