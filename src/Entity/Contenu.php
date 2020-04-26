@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContenuRepository")
@@ -18,7 +19,6 @@ class Contenu
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Produit", inversedBy="contenus")
-     * @ORM\JoinColumn(name="produit_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     private $produit;
 
@@ -29,6 +29,7 @@ class Contenu
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotNull
      */
     private $quantite;
 
