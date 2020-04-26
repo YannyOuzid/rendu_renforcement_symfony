@@ -22,12 +22,17 @@ produit:
   stock : 'Stock'
   add : 'Ajouter au panier'
   edit : 'Modifier le produit'
-  delete : 'Supprimer le panier'
+  delete : 'Supprimer le produit'
   titre : 'Produit'
 
 admin:
   role : 'Changer le role'
   titre : 'Admin'
+  user : 'Liste des utilisateurs inscrits'
+  panier : 'Liste des paniers en cours'
+  utilisateur : 'Utilisateur'
+  mail : 'E-mail'
+  id : 'Id du panier'
 
 compte :
   nom : 'Nom'
@@ -57,7 +62,7 @@ panier :
   prix : 'Prix du produit à l unité'
   total : 'Prix total'
   montant : 'Montant total du panier'
-  add : 'Creer un panier'
+  add : 'Vous n avez toujours pas de panier en cours. Veuillez creer un panier'
   valid : 'Valider mon panier'
   titre : 'Mon Panier'
 
@@ -70,8 +75,6 @@ connexion :
   mail : 'E-mail'
   password : 'Mot de passe'
   titre : 'Connexion'
-
-  
 
 Nom : 'Nom'
 Description : 'Description'

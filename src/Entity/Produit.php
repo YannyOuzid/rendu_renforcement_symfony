@@ -45,6 +45,7 @@ class Produit
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Contenu", mappedBy="produit")
+     * @ORM\JoinColumn(onDelete="SET NULL", nullable=true)
      */
     private $contenus;
 

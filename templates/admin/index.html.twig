@@ -4,6 +4,8 @@
 
 {% block body %}
 
+<li class="list-group-item list-group-item-primary">{{'admin.user'|trans}}</li>
+
     {% if users is not empty %}
         <div class="container">
             <div class="row">
@@ -22,17 +24,16 @@
     {% endif %}
 
     {% if is_granted('ROLE_SUPER_ADMIN') %}
-    <p>Les paniers encore en cours</p>
+
+    <li class="list-group-item list-group-item-primary">{{'admin.panier'|trans}}</li>
         {% for panier in paniers %}
                         <div class="card">
                         <div class="card-body">
-                        <p>{{'compte.panier'|trans}} : {{ panier.id }}</p>
+                        <p>{{'admin.id'|trans}} : {{ panier.id }}</p>
 
-                        <p>Utilisateur : {{ panier.utilisateur }}</p>
+                        <p>{{'admin.utilisateur'|trans}} : {{ panier.utilisateur.nom }} {{ panier.utilisateur.prenom }}</p>
 
-                        <p>Nom : {{ panier.utilisateur.nom }}</p>
-
-                        <p>Prenom : {{ panier.utilisateur.prenom }}</p>
+                        <p>{{'admin.mail'|trans}} : {{ panier.utilisateur}}</p>
 
                         <a type="button" class="btn btn-primary btn-lg btn-block"  href="{{ path('contenu',{'id': panier.id}) }}">{{'compte.detail'|trans}}</a>
 

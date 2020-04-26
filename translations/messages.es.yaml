@@ -1,0 +1,90 @@
+nav:
+  connexion: 'Iniciar sesión'
+  inscription : 'Registro'
+  accueil : 'Inicio'
+  admin : 'Administrador'
+  compte : 'Mi cuenta'
+  panier : 'Carro'
+  deconnexion : 'Cerrar sesión'
+  titre : 'Bienvenido'
+
+accueil:
+  add : 'Agregar un producto'
+  prix : 'Premio'
+  stock : 'Stock'
+  produit : 'Al producto'
+  titre : 'Inicio'
+
+produit:
+  nom : 'Apellido'
+  description : 'Descripción'
+  prix : 'Premio'
+  stock : 'Stock'
+  add : 'Añadir a la cesta'
+  edit : 'Modificar producto'
+  delete : 'Eliminar producto'
+  titre : 'Producto'
+
+admin:
+  role : 'Cambio de rol'
+  titre : 'Administrador'
+  user : 'Listado de usuarios registrados'
+  panier : 'Lista de cestas en progreso'
+  utilisateur : 'Usuario'
+  mail : 'Correo electrónico'
+  id : 'ID de la cesta'
+
+compte :
+  nom : 'Apellido'
+  prenom : 'Nombre'
+  mail : 'Correo electrónico'
+  edit : 'Editar información de la cuenta'
+  historique : 'Historial de pedidos'
+  panier : 'ID de la cesta'
+  achat : 'Fecha de compra de canasta'
+  detail : 'Detalles de la cesta'
+  titre : 'Mi cuenta'
+  
+contenu : 
+  panier : 'ID de la cesta'
+  nom : 'Nombre del producto'
+  date : 'Fecha de compra del producto'
+  quantite : 'Orden de cantidad'
+  prix : 'Precio del producto por unidad'
+  total : 'Precio total'
+  montant : 'Cantidad total de la canasta'
+  titre : 'Contenido'
+
+panier :
+  panier : 'ID de la cesta'
+  nom : 'Nombre del producto'
+  quantite : 'Orden de cantidad'
+  prix : 'Precio del producto por unidad'
+  total : 'Precio total'
+  montant : 'Cantidad total de la canasta'
+  add : 'Aún no tienes canasta en progreso. Crea una canasta'
+  valid : 'Validar mi cesta'
+  titre : 'Mi cesta'
+
+register :
+  button : 'Guardar'
+  titre : 'Registro'
+
+connexion :
+  etat : 'Has iniciado sesión como'
+  mail : 'Correo electrónico'
+  password : 'Contraseña'
+  titre : 'Iniciar sesión'
+
+Nom : 'Apellido'
+Description : 'Description'
+Prix : 'Premio'
+Stock : 'Stock'
+Photo : 'Foto'
+Sauvegarder : 'Guardar'
+Quantite : 'Cantidad'
+Ajouter : 'Agregar'
+Email : 'Correo electrónico'
+Prenom : 'Nombre'
+Plain password : 'Contraseña'
+Agree terms : 'Validar las condiciones'

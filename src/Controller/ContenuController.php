@@ -24,4 +24,19 @@ class ContenuController extends AbstractController
             'contenus' => $contenus
         ]);
     }
+
+    /**
+     * @Route ("contenu/delete/{id}", name="delete_contenu")
+     */
+
+    public function delete(Contenu $contenu=null){
+
+        if($contenu !=null){
+
+            $pdo = $this->getDoctrine()->getManager();
+            $pdo->remove($contenu);
+            $pdo->flush();
+        }
+        return $this->redirectToRoute('panier');
+    }
 }

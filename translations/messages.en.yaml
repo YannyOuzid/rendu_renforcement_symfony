@@ -28,6 +28,11 @@ produit:
 admin:
   role : 'Change the role'
   titre : 'Admin'
+  user : 'List of registered users'
+  panier : 'List of carts in progress'
+  utilisateur : 'User'
+  mail : 'E-mail'
+  id : 'Cart ID'
 
 compte :
   nom : 'Name'
@@ -57,7 +62,7 @@ panier :
   prix : 'Product price per unit'
   total : 'Total price'
   montant : 'Total cart amount'
-  add : 'Create a new cart'
+  add : 'You still have no basket in progress.Please create a new cart'
   valid : 'Validate my cart'
   titre : 'My cart'
 

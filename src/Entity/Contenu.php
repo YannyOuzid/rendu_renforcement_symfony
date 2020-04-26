@@ -23,6 +23,7 @@ class Contenu
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Panier", inversedBy="contenus")
+     * @ORM\JoinColumn(onDelete="SET NULL", nullable=true)
      */
     private $panier;
 

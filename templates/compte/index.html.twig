@@ -9,11 +9,11 @@
 <p>{{'compte.prenom'|trans}} : {{ user.prenom }}</p>
 <p>{{'compte.mail'|trans}} : {{ user.email }}</p>
 
-<p>{{'compte.edit'|trans}}</p>
+<li class="list-group-item list-group-item-primary">{{'compte.edit'|trans}}</li>
 
 {{form (form_edit)}}
 
-            <p>{{'compte.historique'|trans}}</p>
+<li class="list-group-item list-group-item-primary">{{'compte.historique'|trans}}</li>
 
                     {% for panier in paniers %}
                     <div class="card">

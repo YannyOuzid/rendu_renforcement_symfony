@@ -18,6 +18,7 @@
                         {% set Montant_total = Prix_total + Montant_total %}
 
                     <ul class="list-group">
+
                     <li class="list-group-item">{{'panier.nom'|trans}} : {{contenu.produit.nom}}
                                                 <br>
                                                 {{'panier.quantite'|trans}} : {{contenu.quantite}}
@@ -25,6 +26,8 @@
                                                 {{'panier.prix'|trans}} : {{contenu.produit.prix}}
                                                 <br>
                                                 {{'panier.total'|trans}} : {{Prix_total}} €
+                                                <br>
+                                                <a href="{{ path('delete_contenu',{'id':contenu.id}) }}">Supprimer</a>
                                                 </li>
                     </ul>
 
@@ -32,6 +35,13 @@
                     <li class="list-group-item">{{'panier.montant'|trans}} : {{Montant_total}} €</li>
 
                     <a type="button" class="btn btn-primary btn-lg btn-block"   href="/panier/{{ paniers[0].id }}">{{'panier.valid'|trans}}</a>
+
+                    {% else %}
+
+                     <li class="list-group-item list-group-item-primary">{{'panier.panier'|trans}} : {{ paniers[0].id }}</li>
+
+                    <p>Votre panier est vide. Veuillez ajouter des articles</p>
+
                     {% endif %}
 
                 {% else %}
